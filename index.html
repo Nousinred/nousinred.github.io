@@ -1,7 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notre Mariage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5dc; /* beige */
+      color: #2f4f4f; /* vert foncé */
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #e6e6d1;
+    }
+
+    h1 {
+      color: #2e5339;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: none;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Présentation */
+    .presentation {
+      padding: 2rem;
+      text-align: center;
+      background-color: #fffef3;
+    }
+
+    .presentation p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2rem;
+    }
+
+    /* Carte */
+    .map {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    iframe {
+      border: 0;
+      width: 90%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Bouton inscription */
+    .rsvp {
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .rsvp button {
+      background-color: #2e5339;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .rsvp button:hover {
+      background-color: #3c6e50;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <header>
+    <h1>Marie & Julien</h1>
+    <h2>Notre Mariage – 12 Juillet 2025</h2>
+  </header>
+
+  <!-- Slideshow -->
+  <section class="slideshow-container">
+    <img class="slides" src="photo1.jpg" alt="Photo 1">
+    <img class="slides" src="photo2.jpg" alt="Photo 2">
+    <img class="slides" src="photo3.jpg" alt="Photo 3">
+  </section>
+
+  <!-- Présentation -->
+  <section class="presentation">
+    <h2>Bienvenue à notre mariage</h2>
+    <p>
+      Nous sommes ravis de vous inviter à célébrer notre union le samedi 12 juillet 2025.
+      La cérémonie aura lieu à 15h à la Mairie de Bordeaux, suivie d'une réception au Domaine de la Forêt.
+      Nous avons hâte de partager ce moment unique avec vous !
+    </p>
+  </section>
+
+  <!-- Carte -->
+  <section class="map">
+    <h2>Lieu de la réception</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- Inscription -->
+  <section class="rsvp">
+    <h2>Confirmez votre présence</h2>
+    <button onclick="window.location.href='https://formulaire-inscription.com'">Je m'inscris</button>
+  </section>
+
+  <script>
+    // Slideshow automatique
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change toutes les 3 secondes
+    }
+  </script>
+
 </body>
 </html>
