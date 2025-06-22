@@ -7,13 +7,32 @@
       text-align: center;
       margin-top: 50px;
     }
+
+    .image-container img {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      display: inline-block;
+    }
+
+    .map-image {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <div class="image-container">
     <img src="1.png" alt="Image 1">
     <img src="2.png" alt="Image 2">
-    <img src="4.png" alt="Image 4">
+
+    <!-- Image map setup -->
+    <img src="4.png" alt="Image 4" usemap="#qrmap" class="map-image">
+    <map name="qrmap">
+      <!-- Replace these coordinates with actual positions -->
+    <area target="_blank" alt="Form" title="Form" href="https://docs.google.com/forms/d/e/1FAIpQLScosJGeRB2Ug9WkRj_NKn-vChi08DAS7cTV9PNnVAG3r8y4xQ/viewform?usp=header" coords="417,349,128,57" shape="rect">
+    <area target="_blank" alt="Mapa" title="Mapa" href="https://www.google.com/maps/d/viewer?mid=1CD47NZ_x1BP25N1hPuXZy-4PikqpQgY&amp;hl=fr&amp;usp=sharing" coords="127,446,410,728" shape="rect">
+    </map>
   </div>
 </body>
 </html>
